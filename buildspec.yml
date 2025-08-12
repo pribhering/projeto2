@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0
+    commands:
+      - echo "Iniciando fase de instalação..."
+      - dotnet --version
+
+  pre_build:
+    commands:
+      - echo "Restaurando pacotes..."
+      - dotnet restore
+
+  build:
+    commands:
+      - echo "Compilando aplicação..."
+      - dotnet build --configuration Release
+
+  post_build:
+    commands:
+      - echo "Executando testes..."
+      - dotnet test --configuration Release --no-build
+      - echo "Publicando aplicação..."
+      - dotnet publish --configuration Release --output ./output
+
+artifacts:
+  files:
+  - ./publish/**/*
