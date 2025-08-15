@@ -18,7 +18,7 @@ phases:
       - echo "Compilando aplicação..."
       - dotnet publish -c Release -o out
       - echo "Construindo imagem Docker..."
-      - docker build -t projeto2 .
+      - docker build -t meusite-proj2 .
 
   post_build:
     commands:
