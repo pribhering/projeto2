@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      dotnet: 3.1 
+      dotnet: 9.0
     commands:
       - echo "Instalando dependências do build..."
       - dotnet --version
