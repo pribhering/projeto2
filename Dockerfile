@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS runtime
 WORKDIR /app
 
 # Copie o arquivo para pasta raiz
-COPY /app/out ./
+COPY out ./
 
 # Expõe a porta e inicia o aplicativo
 EXPOSE 80
