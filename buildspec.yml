@@ -21,6 +21,8 @@ phases:
       - dotnet publish -c Release -o out
       - echo "Construindo imagem Docker..."
       - docker build -t meusite-proj2 .
+      - echo "Marcando imagem com tag do ECR..."
+      - docker tag meusite-proj2:latest 239710307340.dkr.ecr.us-east-1.amazonaws.com/meusite-proj2:latest
 
   post_build:
     commands:
