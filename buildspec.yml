@@ -18,7 +18,8 @@ phases:
   build:
     commands:
       - echo "Compilando aplicação..."
-      - dotnet publish -c Release -o out
+      - dotnet publish -c Release -o out 
+      - ls out
       - echo "Construindo imagem..."
       - docker build -t meusite-proj2 .
       - echo "Marcando imagem com tag do ECR..."
